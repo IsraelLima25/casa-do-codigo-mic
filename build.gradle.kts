@@ -38,7 +38,7 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     implementation("io.micronaut:micronaut-validation")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-
+    implementation ("mysql:mysql-connector-java:8.0.25")
 }
 
 

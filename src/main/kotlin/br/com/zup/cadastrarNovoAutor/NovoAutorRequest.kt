@@ -10,4 +10,8 @@ data class NovoAutorRequest(
     @field:NotBlank @field:Email val email: String,
     @field:NotBlank val nome: String,
     @field:NotBlank @field:Size(max = 400) val descricao: String
-)
+) {
+    fun toModel(): Autor {
+        return Autor(email = email, nome = nome, descricao = descricao)
+    }
+}
