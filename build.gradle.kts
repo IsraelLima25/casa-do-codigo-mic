@@ -15,6 +15,8 @@ repositories {
     mavenCentral()
 }
 
+
+
 micronaut {
     runtime("netty")
     testRuntime("junit5")
@@ -60,7 +62,5 @@ tasks {
             jvmTarget = "11"
         }
     }
-
-
 }
 
