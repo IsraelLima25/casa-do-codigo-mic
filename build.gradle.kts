@@ -5,6 +5,7 @@ plugins {
     id("io.micronaut.application") version "1.5.3"
     id("org.jetbrains.kotlin.plugin.allopen") version "1.4.32"
     id("org.jetbrains.kotlin.plugin.jpa") version "1.4.32"
+
 }
 
 version = "0.1"
@@ -42,6 +43,7 @@ dependencies {
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation ("mysql:mysql-connector-java:8.0.25")
     implementation("io.micronaut.xml:micronaut-jackson-xml")
+    implementation("org.hibernate:hibernate-validator:6.2.0.Final")
 }
 
 

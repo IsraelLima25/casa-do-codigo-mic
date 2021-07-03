@@ -7,6 +7,7 @@ import javax.persistence.GenerationType
 import javax.persistence.Id
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
+import javax.validation.constraints.PositiveOrZero
 import javax.validation.constraints.Size
 
 @Entity
@@ -14,7 +15,9 @@ class Autor(
     @field:NotBlank @field:Email val email: String,
     @field:NotBlank val nome: String,
     @field:NotBlank @field:Size(max = 400) var descricao: String,
-    val endereco: Endereco
+    val endereco: Endereco,
+    @PositiveOrZero
+    val quantidadeLivrosPublicados: Int
 ) {
 
     @Id

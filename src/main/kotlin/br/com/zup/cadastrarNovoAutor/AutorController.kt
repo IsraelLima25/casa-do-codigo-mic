@@ -2,7 +2,6 @@ package br.com.zup.cadastrarNovoAutor
 
 import br.com.zup.apiExterna.apiViaCep.ViaCepClient
 import io.micronaut.http.HttpResponse
-import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
