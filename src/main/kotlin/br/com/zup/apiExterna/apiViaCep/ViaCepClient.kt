@@ -5,13 +5,12 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.PathVariable
 import io.micronaut.http.client.annotation.Client
 
+// xml funcionando com republica virtual. return text_xml!!
+//@Client("http://cep.republicavirtual.com.br/web_cep.php?cep=91010000&formato=xml")
 @Client("http://viacep.com.br/ws")
 interface ViaCepClient {
-
-    @Get("/{cep}/{extensao}")
+    @Get("/{cep}/json")
     fun consultarEndereco(
-        @PathVariable cep: String,
-        @PathVariable extensao: String
-    ):HttpResponse<EnderecoViaCepResponse>
-
+        @PathVariable cep: String
+    ): HttpResponse<EnderecoRepublicaResponse>
 }

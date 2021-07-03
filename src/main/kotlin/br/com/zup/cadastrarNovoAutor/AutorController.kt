@@ -14,7 +14,6 @@ import javax.validation.Valid
 @Controller("/autores")
 class AutorController(
     val autorRepository: AutorRepository,
-    val enderecoClient: EnderecoClient,
     val viaCepClient: ViaCepClient
 ) {
 
@@ -22,10 +21,9 @@ class AutorController(
     fun cadastrar(@Body @Valid novoAutorRequest: NovoAutorRequest): HttpResponse<Any> {
 
         // consultando via cep para capturar endereço
-        val enderecoResponse = viaCepClient.consultarEndereco(novoAutorRequest.cep, MediaType.EXTENSION_JSON)
+        val enderecoResponse = viaCepClient.consultarEndereco(novoAutorRequest.cep)
         val autor = novoAutorRequest.toModel(
-            enderecoResponse.body() ?: throw IllegalArgumentException("consulta inválida")
-        )
+            enderecoResponse.body()!!)
 
         autorRepository.save(autor)
         val uri = UriBuilder.of("/autores/{id}").expand(mutableMapOf(Pair("id", autor.id)))

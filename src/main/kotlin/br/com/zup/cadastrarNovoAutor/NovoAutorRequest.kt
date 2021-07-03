@@ -1,6 +1,6 @@
 package br.com.zup.cadastrarNovoAutor
 
-import br.com.zup.apiExterna.apiViaCep.EnderecoViaCepResponse
+import br.com.zup.apiExterna.apiViaCep.EnderecoRepublicaResponse
 import io.micronaut.core.annotation.Introspected
 import javax.validation.constraints.Email
 import javax.validation.constraints.NotBlank
@@ -14,7 +14,7 @@ data class NovoAutorRequest(
     @field:NotBlank val cep: String,
     @field:NotBlank val numero: String
 ) {
-    fun toModel(enderecoResponse: EnderecoViaCepResponse): Autor {
+    fun toModel(enderecoResponse: EnderecoRepublicaResponse): Autor {
         val endereco = Endereco(enderecoResponse,numero)
         return Autor(email = email, nome = nome, descricao = descricao, endereco = endereco)
     }

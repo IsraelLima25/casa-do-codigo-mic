@@ -1,10 +1,10 @@
 package br.com.zup.cadastrarNovoAutor
 
-import br.com.zup.apiExterna.apiViaCep.EnderecoViaCepResponse
+import br.com.zup.apiExterna.apiViaCep.EnderecoRepublicaResponse
 import javax.persistence.Embeddable
 
 @Embeddable
-class Endereco(enderecoResponse: EnderecoViaCepResponse, val numero: String) {
+class Endereco(enderecoResponse: EnderecoRepublicaResponse, val numero: String) {
 
     val logradouro = enderecoResponse.logradouro
     val localidade = enderecoResponse.localidade
