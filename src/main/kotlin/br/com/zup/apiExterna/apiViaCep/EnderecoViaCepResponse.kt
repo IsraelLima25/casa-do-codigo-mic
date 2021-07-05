@@ -1,9 +1,7 @@
 package br.com.zup.apiExterna.apiViaCep
 
-class EnderecoRepublicaResponse(
+data class EnderecoViaCepResponse(
     val logradouro: String,
     val localidade: String,
     val uf: String
-) {
-
-}
+)

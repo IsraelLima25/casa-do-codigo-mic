@@ -14,7 +14,8 @@ import javax.validation.constraints.Size
 class Autor(
     @field:NotBlank @field:Email val email: String,
     @field:NotBlank val nome: String,
-    @field:NotBlank @field:Size(max = 400) var descricao: String,
+    @field:NotBlank @field:Size(max = 400)
+    var descricao: String,
     val endereco: Endereco,
     @PositiveOrZero
     val quantidadeLivrosPublicados: Int

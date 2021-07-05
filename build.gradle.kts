@@ -44,6 +44,9 @@ dependencies {
     implementation ("mysql:mysql-connector-java:8.0.25")
     implementation("io.micronaut.xml:micronaut-jackson-xml")
     implementation("org.hibernate:hibernate-validator:6.2.0.Final")
+
+    testImplementation("org.mockito:mockito-core:3.8.0")
+
 }
 
 

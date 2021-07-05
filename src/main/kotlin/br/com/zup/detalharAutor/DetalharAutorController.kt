@@ -11,7 +11,11 @@ class DetalharAutorController(val autorRepository: AutorRepository) {
     @Get
     fun listarAutores(): HttpResponse<List<DetalheAutorResponse>> {
         val autores = autorRepository.findAll()
-        val listDetalheAutoresResponse = autores.map { autor -> DetalheAutorResponse(autor) }
+        val listDetalheAutoresResponse = autores.map { autor ->
+            DetalheAutorResponse(
+                email = autor.email, nome = autor.nome, descricao = autor.descricao
+            )
+        }
         return HttpResponse.ok(listDetalheAutoresResponse)
     }
 

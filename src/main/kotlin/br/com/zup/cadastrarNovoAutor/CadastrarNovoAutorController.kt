@@ -11,7 +11,7 @@ import javax.validation.Valid
 
 @Validated
 @Controller("/autores")
-class AutorController(
+class CadastrarNovoAutorController(
     val autorRepository: AutorRepository,
     val viaCepClient: ViaCepClient
 ) {

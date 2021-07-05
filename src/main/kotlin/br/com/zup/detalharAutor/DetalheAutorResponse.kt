@@ -1,11 +1,12 @@
 package br.com.zup.detalharAutor
 
-import br.com.zup.cadastrarNovoAutor.Autor
+data class DetalheAutorResponse(val email: String, val nome: String, val descricao: String) {
 
-class DetalheAutorResponse(autor: Autor) {
-
-    val email: String = autor.email
-    val nome: String = autor.nome
-    val descricao: String = autor.descricao
+//    val endereco =
+//        EnderecoResponse(
+//            logradouro = autor.endereco.logradouro,
+//            localidade = autor.endereco.localidade,
+//            uf = autor.endereco.uf
+//        )
 
 }

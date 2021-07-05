@@ -12,16 +12,18 @@ class BuscaAutoresController(val autorRepository: AutorRepository) {
 
     @Get("/filter")
     fun lista(@QueryValue(defaultValue = "") email: String): HttpResponse<Any> {
-        if(email.isEmpty()){
+        if (email.isEmpty()) {
             val autores = autorRepository.findAll()
-            val resposta = autores.map { autor -> DetalheAutorResponse(autor) }
+            val resposta = autores.map { autor -> DetalheAutorResponse(email = autor.email, nome = autor.nome, descricao = autor.descricao) }
             return HttpResponse.ok(resposta)
         }
         val possivelAutor = autorRepository.buscaPoremail(email)
-        if(possivelAutor.isEmpty){
+        if (possivelAutor.isEmpty) {
             return HttpResponse.notFound()
         }
-        val autor = possivelAutor.get()
-        return HttpResponse.ok(DetalheAutorResponse(autor))
+        val autorBusca = possivelAutor.get()
+        val detalheAutorResponse =
+            DetalheAutorResponse(email = autorBusca.email, nome = autorBusca.nome, descricao = autorBusca.descricao)
+        return HttpResponse.ok(detalheAutorResponse)
     }
 }

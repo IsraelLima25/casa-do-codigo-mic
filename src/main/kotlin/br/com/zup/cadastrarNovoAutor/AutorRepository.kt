@@ -13,5 +13,7 @@ interface AutorRepository : JpaRepository<Autor, Long> {
 
     //Query explicit
     @Query("FROM Autor a WHERE a.email=:email")
-    fun buscaPoremail(email:String):Optional<Autor>
+    fun buscaPoremail(email: String): Optional<Autor>
+
+    fun existsByEmail(cpf: String): Boolean
 }

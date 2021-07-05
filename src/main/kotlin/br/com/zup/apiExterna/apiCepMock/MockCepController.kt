@@ -11,7 +11,7 @@ class MockCepController {
 
     @Get("/{cep}")
     fun gerarCepMock(@QueryValue cep: String): HttpResponse<EnderecoResponse> {
-        val enderecoResponse = EnderecoResponse(rua = "Rua das rosas", cidade = "Campinas", "São Paulo")
+        val enderecoResponse = EnderecoResponse(logradouro = "Rua das rosas", localidade = "Campinas", "São Paulo")
         return HttpResponse.ok(enderecoResponse)
     }
 }

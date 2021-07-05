@@ -12,5 +12,5 @@ interface ViaCepClient {
     @Get("/{cep}/json")
     fun consultarEndereco(
         @PathVariable cep: String
-    ): HttpResponse<EnderecoRepublicaResponse>
+    ): HttpResponse<EnderecoViaCepResponse>
 }

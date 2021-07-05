@@ -19,6 +19,10 @@ class AtualizarAutorController(val autorRepository: AutorRepository) {
         val autor = possivelAutor.get()
         autor.descricao = descricao
         autorRepository.update(autor)
-        return HttpResponse.ok(DetalheAutorResponse(autor))
+        return HttpResponse.ok(
+            DetalheAutorResponse(
+                email = autor.email, nome = autor.nome, descricao = autor.descricao
+            )
+        )
     }
 }

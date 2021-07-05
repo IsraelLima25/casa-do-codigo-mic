@@ -18,5 +18,10 @@ jpa:
         show_sql: true
         format_sql: true
 
+logger:
+  levels:
+    io.micronaut.transaction: DEBUG
+
+
 
 
